@@ -1,7 +1,16 @@
 
 .btn {
-  background-color: $mainBlue;
-  color: #FFF;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
   display: inline-block;
   text-decoration: none;
+  padding: 10px 30px;
+  margin: 20px 0;
+  border: 0;
+
+  &:hover {
+    transform: scale(.98);
+  }
 }
+

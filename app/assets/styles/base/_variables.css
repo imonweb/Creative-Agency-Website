@@ -1,2 +1,6 @@
 $mainBlue: #0b0977;
 $mainFont: #333;
+
+:root {
+  --primary-color: #f60f20;
+}

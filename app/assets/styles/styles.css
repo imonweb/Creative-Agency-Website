@@ -2,7 +2,125 @@
 @import 'base/_variables';
 @import 'base/_global';
 @import 'base/_mixins';
-@import 'modules/_large-hero';
 @import 'modules/_btn';
 @import 'modules/_wrapper';
 @import 'modules/_row';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+section {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  padding: 100px;
+}
+ 
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 20;
+}
+
+/*  Toggle */
+.toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color) url(../assets/images/menu.png);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 20;
+  cursor: pointer;
+
+  &--active {
+    background: var(--primary-color) url(../assets/images/close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--active {
+    left: 0;
+  }
+
+  ul {
+    position: relative;
+  }
+
+  ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+  }
+
+  ul li a {
+    font-size: 2.2rem;
+    color: #111;
+    text-decoration: none;
+    font-weight: 300;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+
+  &__social-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: inline-block;
+      transform: scale(0.5);
+    }
+  }
+
+  &__email-icon {
+    position: absolute;
+    bottom: 20px;
+    transform: scale(0.5);
+  }
+
+  
+} /*  Navigation */
+
+
+.home-content {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+}
+
+.home-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 110%;
+}
+
+
