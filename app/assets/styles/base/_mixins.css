@@ -16,6 +16,12 @@
   }
 }
 
+@define-mixin atHome {
+  @media (max-width: 1068px){
+    @mixin-content;
+  }
+}
+
 @define-mixin clearfix {
   &::after {
     content: "";

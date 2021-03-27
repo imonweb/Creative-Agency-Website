@@ -1,0 +1,6 @@
+
+.home-img {
+  @mixin atHome {
+    display: none;
+  }
+}
