@@ -5,17 +5,21 @@
 @import 'modules/_btn';
 @import 'modules/_wrapper';
 @import 'modules/_row';
+@import 'modules/_footer';
 @import 'modules/_home';
+@import 'modules/_services';
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
 section {
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   padding: 100px;
-
+  margin-top: 60px;
+ 
   @mixin atHome {
     padding: 100px 40px;
   }
@@ -128,18 +132,5 @@ section {
   
 } /*  Navigation */
 
-
-.home-content {
-  position: relative;
-  z-index: 10;
-  max-width: 600px;
-}
-
-.home-img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 110%;
-}
 
 

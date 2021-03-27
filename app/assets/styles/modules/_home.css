@@ -1,6 +1,26 @@
+ 
+.home {
+   flex-direction: row;
+   margin-top: 0;
 
-.home-img {
-  @mixin atHome {
-    display: none;
+  &__home-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 110%;
+  
+    @mixin atHome {
+      display: none;
+    }
+  }
+
+  &__home-content {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
   }
 }
+
+
+
+
