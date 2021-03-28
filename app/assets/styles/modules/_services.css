@@ -24,7 +24,7 @@
       font-size: 1.5rem;
       font-weight: 500;
       margin-top: 20px;
-      color: #1b206e;
+      color: var(--secondary-color);
     }
   }
 

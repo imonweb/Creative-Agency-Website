@@ -34,6 +34,18 @@
   }
 }
 
+@define-mixin atCall{
+  @media (max-width: 1068x){
+    @mixin-content;
+  }
+}
+
+@define-mixin atContactForm{
+  @media (max-width: 768){
+    @mixin-content;
+  }
+}
+
 @define-mixin clearfix {
   &::after {
     content: "";
