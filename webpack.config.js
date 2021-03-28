@@ -4,6 +4,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const fse = require('fs-extra')
 
 
 const postCSSPlugins = [
@@ -19,9 +20,18 @@ let cssConfig =  {
   use: ['css-loader?url=false', {loader: 'postcss-loader', options: {postcssOptions: {plugins: postCSSPlugins}}}]
 }
 
+let pages = fse.readdirSync('./app').filter(function(file) {
+  return file.endsWith('.html')
+}).map(function(page){
+  return new HtmlWebpackPlugin({
+    filename: page,
+    template: `./app/${page}`
+  })
+})
+
 let config = {
   entry: './app/assets/scripts/App.js',
-  plugins: [new HtmlWebpackPlugin({filename: 'index.html', template: './app/index.html'})],
+  plugins: pages,
   module: {
     rules: [
      cssConfig 
