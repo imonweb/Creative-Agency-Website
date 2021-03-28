@@ -15,6 +15,14 @@ const postCSSPlugins = [
  require('autoprefixer')
 ]
 
+class RunAfterCompile {
+  apply(compiler){
+    compiler.hooks.done.tap('Copy images', function(){
+      fse.copySync('./app/assets/images','./dist/assets/images')
+    })
+  }
+}
+
 let cssConfig =  {
   test: /\.css$/i,
   use: ['css-loader?url=false', {loader: 'postcss-loader', options: {postcssOptions: {plugins: postCSSPlugins}}}]
@@ -69,7 +77,11 @@ if(currentTask == 'build'){
     minimize: true,
     minimizer: [`...`, new CssMinimizerPlugin()]
   }
-  config.plugins.push(new CleanWebpackPlugin(), new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}))
+  config.plugins.push(
+    new CleanWebpackPlugin(), 
+    new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
+    new RunAfterCompile()
+  )
 }
 
 module.exports = config
